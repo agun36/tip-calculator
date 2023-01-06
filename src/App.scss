@@ -1,0 +1,219 @@
+@import './assets/styles/variable.scss';
+*,
+body {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  outline: none;
+  border: none;
+  text-decoration: none;
+}
+
+html {
+  font-size: 62.5%; // 1rem == 10px
+  box-sizing: border-box;
+  scroll-behavior: smooth;
+
+  @media (max-width: 900px) {
+    font-size: 59.5%;
+  }
+
+  @media (max-width: 700px) {
+    font-size: 55.5%;
+    overflow: scroll;
+  }
+}
+
+html::-webkit-scrollbar {
+  width: 0.8rem;
+}
+
+html::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+html::-webkit-scrollbar-thumb {
+  background: #9d9d9d;
+  border-radius: 5rem;
+}
+.container {
+  margin-inline: auto;
+  max-width: 1400px;
+
+  @media screen and (max-width: 1500px) {
+    max-width: 1300px;
+  }
+  @media screen and (max-width: 1400px) {
+    max-width: 1200px;
+  }
+  @media screen and (max-width: 1350px) {
+    max-width: 1000px;
+  }
+  @media screen and (max-width: 1050px) {
+    max-width: 800px;
+  }
+  @media screen and (max-width: 850px) {
+    max-width: 600px;
+  }
+  @media screen and (max-width: 650px) {
+    max-width: 100%;
+    padding: 2rem;
+  }
+}
+body {
+  font-family: 'Space Mono', monospace;
+  background: $color-Light-grayish-cyan;
+}
+
+.header {
+  // margin-bottom: 5rem;
+  @media screen and (max-width: 800px) {
+    // margin-bottom: 0;
+  }
+  h1 {
+    color: $color-Very-dark-cyan;
+    letter-spacing: 1rem;
+    text-transform: uppercase;
+    font-weight: 700;
+    text-align: center;
+    padding-block: 3.5rem;
+  }
+}
+.calculator-wrapper {
+  border-radius: 1.5rem;
+  background: $color-White;
+  width: 100rem;
+  max-width: 90%;
+  min-height: 50vh;
+  display: flex;
+  column-gap: 3rem;
+  margin-inline: auto;
+  padding: 3rem;
+  @media screen and (max-width: 800px) {
+    flex-wrap: wrap;
+    width: 100%;
+    min-height: 100vh;
+    max-width: 100%;
+  }
+}
+.main {
+  width: 50%;
+  form {
+    .form-group {
+      // padding-block: 2rem;
+      label {
+        color: $color-Dark-grayish-cyan;
+        font-size: 1.5rem;
+      }
+      .input-group {
+        display: flex;
+        align-items: center;
+        width: 100%;
+        background: $color-Very-light-grayish-cyan;
+
+        img {
+          flex: 0;
+        }
+        input {
+          padding: 1.2rem;
+          width: 100%;
+          outline: none;
+          background: $color-Very-light-grayish-cyan;
+        }
+      }
+    }
+    .group {
+      h4 {
+        font-size: 1.5rem;
+        color: $colorGrayish-cyan;
+        padding-top: 1rem;
+      }
+      .button-group {
+        padding-block: 1.5rem;
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        grid-template-rows: repeat(3, 40px);
+        gap: 1rem;
+        .btn {
+          background: $color-Very-dark-cyan;
+          color: $color-White;
+        }
+        .btn-light {
+          font-weight: 700;
+          color: $color-Dark-grayish-cyan;
+          background: $color-Very-light-grayish-cyan;
+        }
+        .btn-light-green {
+          background: $color-Strong-cyan;
+          color: $color-Very-dark-cyan;
+          font-weight: 700;
+        }
+        @media screen and (max-width: 800px) {
+          grid-template-columns: repeat(2, 1fr);
+          grid-template-rows: repeat(3, 48px);
+        }
+      }
+      button {
+        padding-inline: 1rem;
+        font-size: 2.5rem;
+        border-radius: 1rem;
+        cursor: pointer;
+      }
+    }
+  }
+  @media screen and (max-width: 800px) {
+    width: 100%;
+    padding-block: 3.5rem;
+  }
+}
+.total {
+  display: flex;
+  flex-direction: column;
+  background: $color-Very-dark-cyan;
+  width: 50%;
+  border-radius: 2rem;
+  padding: 3rem 2.5rem;
+  @media screen and (max-width: 800px) {
+    width: 100%;
+    margin-bottom: 8rem;
+  }
+  .total-row {
+    padding-bottom: 1rem;
+    display: flex;
+    justify-content: space-between;
+    .total-tip {
+      h4 {
+        color: $color-Very-light-grayish-cyan;
+        font-size: 1.5rem;
+      }
+      small {
+        color: $colorGrayish-cyan;
+        font-size: 1.2rem;
+      }
+    }
+    .total-number {
+      display: flex;
+      align-items: center;
+
+      .dollarsign {
+        font-weight: 700;
+      }
+      h2 {
+        font-size: 4rem;
+        color: $color-Strong-cyan;
+      }
+    }
+  }
+  .resetbtn {
+    font-size: 1.8rem;
+    border-radius: 0.6rem;
+    background: $color-Strong-cyan;
+    text-transform: uppercase;
+    font-weight: 700;
+    color: $color-Very-dark-cyan;
+    padding-block: 1rem;
+    width: 100%;
+    margin-top: 3rem;
+    cursor: pointer;
+  }
+}
